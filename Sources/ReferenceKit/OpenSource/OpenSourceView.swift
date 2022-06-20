@@ -22,7 +22,7 @@ public struct OpenSourceView: View {
             .sorted { $0.urlString.components(separatedBy: "/").last ?? "" < $1.urlString.components(separatedBy: "/").last ?? "" }
     }
     
-    init(items: [OpenSourceItem], option: OpenSourceOption) {
+    public init(items: [OpenSourceItem], option: OpenSourceOption) {
         self.items = items
         self.option = option
     }
@@ -74,5 +74,34 @@ public struct OpenSourceView: View {
         .listStyle(.plain)
         .navigationTitle(option.navigationTitleEmoji + " " + option.navigationTitle)
         .navigationBarTitleDisplayMode(.automatic)
+    }
+}
+
+struct OpenSourceView_Previews: PreviewProvider {
+    static var previews: some View {
+        let items: [OpenSourceItem] = [
+            OpenSourceItem("https://github.com/BoilerSwift/ReferenceKit", isDeprecated: true),
+            OpenSourceItem("https://github.com/BoilerSwift/CDCA"),
+            OpenSourceItem("https://github.com/BoilerSwift/AB", isDeprecated: false),
+            OpenSourceItem("https://github.com/BoilerSwift/AB"),
+            OpenSourceItem("https://github.com/BoilerSwift/CD", isDeprecated: false),
+            OpenSourceItem("https://github.com/BoilerSwift/ACD"),
+            OpenSourceItem("https://github.com/BoilerSwift/ReferenceKit", isDeprecated: false)
+        ]
+        let option: OpenSourceOption = .init(
+            navigationTitleEmoji: "🔥",
+            navigationTitle: "불 리스트",
+            rowEmoji: "👋",
+            deprecatedText: "✋ 이제 사용되지 않습니다.",
+            rowTrailingType: .chevronForward
+        )
+        
+        NavigationView {
+            OpenSourceView(items: items, option: option)
+                .preferredColorScheme(.dark)
+        }
+        NavigationView {
+            OpenSourceView(items: items, option: option)
+        }
     }
 }
