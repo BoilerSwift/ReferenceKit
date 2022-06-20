@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ReferenceKit",
+        "repositoryURL": "https://github.com/BoilerSwift/ReferenceKit",
+        "state": {
+          "branch": null,
+          "revision": "406327730a7ccc8d0935f7dba93b253d0666a362",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
