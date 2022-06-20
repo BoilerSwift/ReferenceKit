@@ -13,7 +13,7 @@
 		B1BD97602860326B00151F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BD975E2860326B00151F61 /* Main.storyboard */; };
 		B1BD97622860326C00151F61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BD97612860326C00151F61 /* Assets.xcassets */; };
 		B1BD97652860326C00151F61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BD97632860326C00151F61 /* LaunchScreen.storyboard */; };
-		B1BD976E2860336500151F61 /* ReferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1BD976D2860336500151F61 /* ReferenceKit */; };
+		B1BD977B2860850800151F61 /* ReferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1BD977A2860850800151F61 /* ReferenceKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1BD976E2860336500151F61 /* ReferenceKit in Frameworks */,
+				B1BD977B2860850800151F61 /* ReferenceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 			);
 			name = ReferenceKitExamples;
 			packageProductDependencies = (
-				B1BD976D2860336500151F61 /* ReferenceKit */,
+				B1BD977A2860850800151F61 /* ReferenceKit */,
 			);
 			productName = ReferenceKitExamples;
 			productReference = B1BD97552860326B00151F61 /* ReferenceKitExamples.app */;
@@ -117,7 +117,7 @@
 			);
 			mainGroup = B1BD974C2860326B00151F61;
 			packageReferences = (
-				B1BD976C2860336500151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */,
+				B1BD97792860850800151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */,
 			);
 			productRefGroup = B1BD97562860326B00151F61 /* Products */;
 			projectDirPath = "";
@@ -225,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -280,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -368,20 +368,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1BD976C2860336500151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */ = {
+		B1BD97792860850800151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BoilerSwift/ReferenceKit";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.2;
+				minimumVersion = 0.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B1BD976D2860336500151F61 /* ReferenceKit */ = {
+		B1BD977A2860850800151F61 /* ReferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1BD976C2860336500151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */;
+			package = B1BD97792860850800151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */;
 			productName = ReferenceKit;
 		};
 /* End XCSwiftPackageProductDependency section */

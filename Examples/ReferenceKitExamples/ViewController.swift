@@ -7,6 +7,7 @@
 
 import UIKit
 import ReferenceKit
+import SwiftUI
 
 class ViewController: UIViewController {
     
@@ -19,7 +20,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = OpenSourceView(items: items, option: option)
+        let vc = UIHostingController(rootView: OpenSourceView(items: items, option: option))
+        
     }
 }
 
