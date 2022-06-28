@@ -9,29 +9,69 @@ import SwiftUI
 import WebKit
 
 struct WebView: UIViewRepresentable {
-    private var webView: WKWebView
-    private var urlString: String
     
-    init(urlString: String) {
-        self.urlString = urlString
-        self.webView = WKWebView()
+    fileprivate var webView = WKWebView()
+    fileprivate var activityIndicator = UIActivityIndicatorView() {
+        didSet {
+            activityIndicator.isHidden = !activityIndicator.isAnimating 
+        }
+    }
+    
+    fileprivate var url: String
+    
+    init(_ url: String) {
+        self.url = url
     }
     
     func makeUIView(context: Context) -> WKWebView {
-        if let url = URL(string: urlString) {
+        webView.navigationDelegate = context.coordinator
+        webView.uiDelegate = context.coordinator
+        
+        if let url = URL(string: url) {
             let request = URLRequest(url: url)
-            webView.load(request)
-        } else {
-            let url = URL(string: "https://github.com/BoilerSwift/ReferenceKit")
-            let request = URLRequest(url: url!)
             webView.load(request)
         }
         
         return webView
     }
     
-    func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) {
-        
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
     }
+    
+    func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) { }
 }
 
+extension WebView {
+    class Coordinator: NSObject, WKUIDelegate, WKNavigationDelegate {
+        var parent: WebView
+
+        init(_ parent: WebView) {
+            self.parent = parent
+        }
+        
+        // MARK: - WKNavigationDelegate, WKUIDelegate
+        func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+            webView.reload()
+        }
+
+        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+            
+            parent.activityIndicator.startAnimating()
+        }
+
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            
+            parent.activityIndicator.stopAnimating()
+        }
+
+        func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+
+            parent.activityIndicator.stopAnimating()
+        }
+
+        func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            print("\(#function): - \(error.localizedDescription)")
+        }
+    }
+}

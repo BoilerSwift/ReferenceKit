@@ -8,12 +8,18 @@
 import Foundation
 
 public struct OpenSourceItem: Hashable {
-    public var urlString: String
-    public var isDeprecated: Bool
-    var name: String { urlString.components(separatedBy: "/").last ?? "" }
     
-    public init(_ urlString: String, isDeprecated: Bool = true) {
-        self.urlString = urlString
-        self.isDeprecated = isDeprecated
+    public var title: String
+    public var url: String
+    public var deprecated: Bool
+    
+    public init(
+        title: String,
+        url: String,
+        deprecated: Bool = false
+    ) {
+        self.title = title
+        self.url = url
+        self.deprecated = deprecated
     }
 }
