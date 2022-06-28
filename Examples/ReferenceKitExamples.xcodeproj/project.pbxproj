@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15C83DF286B650300A12343 /* ReferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = B15C83DE286B650300A12343 /* ReferenceKit */; };
 		B1BD97592860326B00151F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD97582860326B00151F61 /* AppDelegate.swift */; };
 		B1BD975B2860326B00151F61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD975A2860326B00151F61 /* SceneDelegate.swift */; };
 		B1BD975D2860326B00151F61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD975C2860326B00151F61 /* ViewController.swift */; };
 		B1BD97622860326C00151F61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BD97612860326C00151F61 /* Assets.xcassets */; };
 		B1BD97652860326C00151F61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BD97632860326C00151F61 /* LaunchScreen.storyboard */; };
-		B1BD977B2860850800151F61 /* ReferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1BD977A2860850800151F61 /* ReferenceKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1BD977B2860850800151F61 /* ReferenceKit in Frameworks */,
+				B15C83DF286B650300A12343 /* ReferenceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = ReferenceKitExamples;
 			packageProductDependencies = (
-				B1BD977A2860850800151F61 /* ReferenceKit */,
+				B15C83DE286B650300A12343 /* ReferenceKit */,
 			);
 			productName = ReferenceKitExamples;
 			productReference = B1BD97552860326B00151F61 /* ReferenceKitExamples.app */;
@@ -114,7 +114,7 @@
 			);
 			mainGroup = B1BD974C2860326B00151F61;
 			packageReferences = (
-				B1BD97792860850800151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */,
+				B15C83DD286B650300A12343 /* XCRemoteSwiftPackageReference "ReferenceKit" */,
 			);
 			productRefGroup = B1BD97562860326B00151F61 /* Products */;
 			projectDirPath = "";
@@ -354,20 +354,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1BD97792860850800151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */ = {
+		B15C83DD286B650300A12343 /* XCRemoteSwiftPackageReference "ReferenceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BoilerSwift/ReferenceKit";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.4;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B1BD977A2860850800151F61 /* ReferenceKit */ = {
+		B15C83DE286B650300A12343 /* ReferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1BD97792860850800151F61 /* XCRemoteSwiftPackageReference "ReferenceKit" */;
+			package = B15C83DD286B650300A12343 /* XCRemoteSwiftPackageReference "ReferenceKit" */;
 			productName = ReferenceKit;
 		};
 /* End XCSwiftPackageProductDependency section */
