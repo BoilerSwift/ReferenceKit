@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-public struct OpenSourceView: View {
+public struct ReferenceView: View {
     
     public var navigationTitle: String
-    public var items: [OpenSourceItem]
+    public var items: [ReferenceItem]
     public var deprecatedTitle: String
     public var trailingType: TrailingType
     
@@ -19,7 +19,7 @@ public struct OpenSourceView: View {
         case chevronForward = "chevron.forward"
     }
     
-    fileprivate var sortedItems: [OpenSourceItem] {
+    fileprivate var sortedItems: [ReferenceItem] {
         return items
             .filter { $0.deprecated }
             .sorted { $0.url < $1.url }
@@ -29,8 +29,8 @@ public struct OpenSourceView: View {
     }
     
     public init(
-        navigationTitle: String = "💡Used OpenSource",
-        items: [OpenSourceItem],
+        navigationTitle: String = "💡Used Reference",
+        items: [ReferenceItem],
         deprecatedTitle: String = "deprecated",
         trailingType: TrailingType = .empty
     ) {
@@ -82,19 +82,19 @@ public struct OpenSourceView: View {
 }
 
 struct OpenSourceView_Previews: PreviewProvider {
-    static let items: [OpenSourceItem] = [
-        OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
-        OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
-        OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
-        OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
+    static let items: [ReferenceItem] = [
+        ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
+        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
+        ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
+        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
     ]
     static var previews: some View {
         NavigationView {
-            OpenSourceView(items: items, trailingType: .empty)
+            ReferenceView(items: items, trailingType: .empty)
                 .preferredColorScheme(.dark)
         }
         NavigationView {
-            OpenSourceView(items: items, trailingType: .chevronForward)
+            ReferenceView(items: items, trailingType: .chevronForward)
         }
     }
 }

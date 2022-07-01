@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct OpenSourceItem: Hashable {
+public struct ReferenceItem: Hashable {
     
     public var title: String
     public var url: String
