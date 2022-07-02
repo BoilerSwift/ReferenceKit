@@ -19,11 +19,11 @@ class ViewController: UIViewController {
     }()
     
     
-    let items: [OpenSourceItem] = [
-        OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
-        OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
-        OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
-        OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
+    let items: [ReferenceItem] = [
+        ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
+        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
+        ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
+        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
     ]
     
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     
     @objc
     func didTapTouch() {
-        let vc = UIHostingController(rootView: OpenSourceView(items: items))
+        let vc = UIHostingController(rootView: ReferenceView(items: items))
         navigationController?.pushViewController(vc, animated: true)
     }
 }
