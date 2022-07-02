@@ -71,7 +71,7 @@ extension WebView {
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-            print("\(#function): - \(error.localizedDescription)")
+            print("❗️ \(#function): - \(error.localizedDescription)")
         }
     }
 }
