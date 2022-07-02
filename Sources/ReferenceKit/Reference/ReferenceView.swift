@@ -9,14 +9,20 @@ import SwiftUI
 
 public struct ReferenceView: View {
     
+    /// ReferenceView의 NavigationTitle에 들어갈 Text
     public var navigationTitle: String
+    /// List에 보여질 items
     public var items: [ReferenceItem]
+    /// deprecated된 item에 보여질 Text
     public var deprecatedTitle: String
+    /// /// UITableViewCell.AccessoryType 과 동일
     public var trailingType: TrailingType
     
     public enum TrailingType: String {
-        case empty = "empty"
-        case chevronForward = "chevron.forward"
+        /// accessory에 아무것도 표시되지 않음
+        case none = "ㅜ"
+        /// 새 컨텐츠를 표시하는 chevron 모양의 컨트롤
+        case disclosureIndicator = "chevron.forward"
     }
     
     fileprivate var sortedItems: [ReferenceItem] {
@@ -29,10 +35,10 @@ public struct ReferenceView: View {
     }
     
     public init(
-        navigationTitle: String = "💡Used Reference",
+        navigationTitle: String = "💡Reference",
         items: [ReferenceItem],
         deprecatedTitle: String = "deprecated",
-        trailingType: TrailingType = .empty
+        trailingType: TrailingType = .disclosureIndicator
     ) {
         self.navigationTitle = navigationTitle
         self.items = items
@@ -45,7 +51,6 @@ public struct ReferenceView: View {
             ForEach(sortedItems, id: \.self) { item in
                 ZStack(alignment: .leading) {
                     NavigationLink {
-                        // TODO: WebView
                         WebView(item.url)
                             .navigationBarTitleDisplayMode(.inline)
                     } label: {
@@ -90,11 +95,11 @@ struct OpenSourceView_Previews: PreviewProvider {
     ]
     static var previews: some View {
         NavigationView {
-            ReferenceView(items: items, trailingType: .empty)
+            ReferenceView(items: items, trailingType: .none)
                 .preferredColorScheme(.dark)
         }
         NavigationView {
-            ReferenceView(items: items, trailingType: .chevronForward)
+            ReferenceView(items: items, trailingType: .disclosureIndicator)
         }
     }
 }
