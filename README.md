@@ -2,11 +2,11 @@
 
 `ReferenceKit`은 출처를 손쉽게 관리하기 위한 도구입니다. <br>
 `ReferenceKit`은 SwiftUI로 만들었습니다. <br>
-`ReferenceKit` 레포의 ISSUE를 획인해주세요! 오픈소스에 기여할 수 있습니다
+`ReferenceKit`저장소의 ISSUE를 획인해주세요! 오픈소스에 기여할 수 있습니다
 
 ## OverView
 <p align="center">
-<img width="307" alt="HomeView" src="https://user-images.githubusercontent.com/56182112/176247873-e4aa4834-4383-4e5e-bd4b-7b0038f96ef7.png"><img width="302" alt="DetailView" src="https://user-images.githubusercontent.com/56182112/176248174-a80cb730-2686-4f23-ab0e-87b9e821fc9f.png">
+<img width="307" alt="HomeView" src="https://user-images.githubusercontent.com/56182112/176992190-943513c6-27bd-4fac-8f3a-d2dba4fe7f3f.png"><img width="307" alt="DetailView" src="https://user-images.githubusercontent.com/56182112/176992199-c33e27b4-b6be-4d10-afbb-f21662d7cccb.png">
 </p>
 
 ### Supports
@@ -17,28 +17,30 @@
 ### UIKit
 
 ```swift
-  let items: [OpenSourceItem] = [
-    OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
-    OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
-    OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
-    OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
+  let items: [ReferenceItem] = [
+    ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
+    ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
+    ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
+    ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)  
   ]
 
-  let vc = UIHostingController(rootView: OpenSourceView(items: items))
-  navigationController?.pushViewController(vc, animated: true)
+  let vc = UIHostingController(rootView: ReferenceView(items: items))
+  // navigationController?.pushViewController(vc, animated: true)
+  vc.modalPresentationStyle = .fullScreen
+  self.present(vc, animated: true, completion: nil)
 ```
 
 ### SwiftUI
 
 ```swift
-  let items: [OpenSourceItem] = [
-    OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
-    OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
-    OpenSourceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit",   deprecated: true),
-    OpenSourceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
+  let items: [ReferenceItem] = [
+    ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
+    ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
+    ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
+    ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)  
   ]
 
   NavigationView {
-    OpenSourceView(items: items, trailingType: .chevronForward)
+    ReferenceView(items: items, trailingType: .none)
   }
 ```
