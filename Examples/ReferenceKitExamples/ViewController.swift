@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     
     var button: UIButton = {
         let button = UIButton()
-        button.setTitle("Go To OpenSourceView", for: .normal)
+        button.setTitle(
+                        """
+                        안녕하세요. ReferenceKit에 오신걸 환영합니다.
+                        이 문구를 클릭하면 ReferenceKit 예시를 확인하실 수 있습니다.
+                        """,
+                        for: .normal
+        )
         
         return button
     }()
@@ -42,13 +48,15 @@ class ViewController: UIViewController {
             button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            button.heightAnchor.constraint(equalToConstant: 20),
+            button.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
     @objc
     func didTapTouch() {
         let vc = UIHostingController(rootView: ReferenceView(items: items))
-        navigationController?.pushViewController(vc, animated: true)
+        //        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
