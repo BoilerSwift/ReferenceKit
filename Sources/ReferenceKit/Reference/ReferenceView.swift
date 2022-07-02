@@ -29,7 +29,7 @@ public struct ReferenceView: View {
     }
     
     public init(
-        navigationTitle: String = "💡Used Reference",
+        navigationTitle: String = "💡Reference",
         items: [ReferenceItem],
         deprecatedTitle: String = "deprecated",
         trailingType: TrailingType = .empty
@@ -45,7 +45,6 @@ public struct ReferenceView: View {
             ForEach(sortedItems, id: \.self) { item in
                 ZStack(alignment: .leading) {
                     NavigationLink {
-                        // TODO: WebView
                         WebView(item.url)
                             .navigationBarTitleDisplayMode(.inline)
                     } label: {
