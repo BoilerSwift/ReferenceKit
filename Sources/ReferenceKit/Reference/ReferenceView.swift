@@ -47,42 +47,46 @@ public struct ReferenceView: View {
     }
     
     public var body: some View {
-        List {
-            ForEach(sortedItems, id: \.self) { item in
-                ZStack(alignment: .leading) {
-                    NavigationLink {
-                        WebView(item.url)
-                            .navigationBarTitleDisplayMode(.inline)
-                    } label: {
-                        EmptyView()
-                    }
-                    .opacity(0)
-                    
-                    HStack {
-                        Text(item.title)
+        NavigationView {
+            
+            List {
+                ForEach(sortedItems, id: \.self) { item in
+                    ZStack(alignment: .leading) {
+                        NavigationLink {
+                            WebView(item.url)
+                                .navigationBarTitleDisplayMode(.inline)
+                        } label: {
+                            EmptyView()
+                        }
+                        .opacity(0)
                         
-                        if !item.deprecated {
-                            Text(deprecatedTitle)
-                                .font(.caption2)
-                                .padding(.horizontal, 5)
-                                .padding(.vertical, 2)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.gray, lineWidth: 1)
-                                )
+                        HStack {
+                            Text(item.title)
+                            
+                            if !item.deprecated {
+                                Text(deprecatedTitle)
+                                    .font(.caption2)
+                                    .padding(.horizontal, 5)
+                                    .padding(.vertical, 2)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.gray, lineWidth: 1)
+                                    )
+                            }
                         }
                     }
+                    .foregroundColor(
+                        item.deprecated
+                        ? Color.primary
+                        : Color.secondary
+                    )
                 }
-                .foregroundColor(
-                    item.deprecated
-                    ? Color.primary
-                    : Color.secondary
-                )
             }
+            .listStyle(.plain)
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.automatic)
         }
-        .listStyle(.plain)
-        .navigationTitle(navigationTitle)
-        .navigationBarTitleDisplayMode(.automatic)
+        
     }
 }
 
