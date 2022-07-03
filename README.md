@@ -2,7 +2,8 @@
 
 `ReferenceKit`은 출처를 손쉽게 관리하기 위한 도구입니다. <br>
 `ReferenceKit`은 SwiftUI로 만들었습니다. <br>
-`ReferenceKit`저장소의 ISSUE를 획인해주세요! 오픈소스에 기여할 수 있습니다
+`ReferenceKit`저장소에 Issue를 등록하고 언제든지 PR을 보내주새요. 오픈소스에 기여하실 수 있습니다.
+
 
 ## OverView
 <p align="center">
