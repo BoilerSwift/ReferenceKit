@@ -20,17 +20,17 @@ public struct ReferenceView: View {
     
     public enum TrailingType: String {
         /// accessory에 아무것도 표시되지 않음
-        case none = "ㅜ"
+        case none = ""
         /// 새 컨텐츠를 표시하는 chevron 모양의 컨트롤
         case disclosureIndicator = "chevron.forward"
     }
     
     fileprivate var sortedItems: [ReferenceItem] {
         return items
-            .filter { $0.deprecated }
+            .filter { !$0.deprecated }
             .sorted { $0.url < $1.url }
         + items
-            .filter { !$0.deprecated }
+            .filter { $0.deprecated }
             .sorted { $0.url < $1.url }
     }
     

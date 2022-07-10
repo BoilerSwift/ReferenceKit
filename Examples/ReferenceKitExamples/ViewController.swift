@@ -29,7 +29,8 @@ class ViewController: UIViewController {
         ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
         ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
         ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
-        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
+        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true),
+        ReferenceItem(title: "deprecatedTrue", url: "https://rldd.tistory.com", deprecated: true)
     ]
     
     override func viewDidLoad() {
