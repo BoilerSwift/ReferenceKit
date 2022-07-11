@@ -47,8 +47,6 @@ public struct ReferenceView: View {
     }
     
     public var body: some View {
-        NavigationView {
-            
             List {
                 ForEach(sortedItems, id: \.self) { item in
                     ZStack(alignment: .leading) {
@@ -63,7 +61,7 @@ public struct ReferenceView: View {
                         HStack {
                             Text(item.title)
                             
-                            if !item.deprecated {
+                            if item.deprecated {
                                 Text(deprecatedTitle)
                                     .font(.caption2)
                                     .padding(.horizontal, 5)
@@ -77,25 +75,25 @@ public struct ReferenceView: View {
                     }
                     .foregroundColor(
                         item.deprecated
-                        ? Color.primary
-                        : Color.secondary
+                        ? Color.secondary
+                        : Color.primary
                     )
                 }
             }
             .listStyle(.plain)
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.automatic)
-        }
-        
     }
 }
 
 struct OpenSourceView_Previews: PreviewProvider {
     static let items: [ReferenceItem] = [
-        ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
-        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com"),
-        ReferenceItem(title: "ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
-        ReferenceItem(title: "🐻‍❄️ 만든이", url: "https://rldd.tistory.com", deprecated: true)
+        ReferenceItem(title: "🚨 is not deprecated", url: "https://rldd.tistory.com", deprecated: true),
+        ReferenceItem(title: "✅ ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit"),
+        ReferenceItem(title: "✅ 만든이", url: "https://rldd.tistory.com"),
+        ReferenceItem(title: "🚨 ReferenceKit", url: "https://github.com/BoilerSwift/ReferenceKit", deprecated: true),
+        ReferenceItem(title: "🚨 만든이", url: "https://rldd.tistory.com", deprecated: true),
+        ReferenceItem(title: "🚨 deprecated", url: "https://rldd.tistory.com", deprecated: true)
     ]
     static var previews: some View {
         NavigationView {
