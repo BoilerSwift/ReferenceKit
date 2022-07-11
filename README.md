@@ -7,7 +7,7 @@
 
 ## OverView
 <p align="center">
-<img width="307" alt="HomeView" src="https://user-images.githubusercontent.com/56182112/176992190-943513c6-27bd-4fac-8f3a-d2dba4fe7f3f.png"><img width="307" alt="DetailView" src="https://user-images.githubusercontent.com/56182112/176992199-c33e27b4-b6be-4d10-afbb-f21662d7cccb.png">
+<img width="307" alt="HomeView" src="https://user-images.githubusercontent.com/56182112/178227521-9a5ff7dd-2b13-4ed1-a077-de6275bf55e8.png"><img width="307" alt="DetailView" src="https://user-images.githubusercontent.com/56182112/176992199-c33e27b4-b6be-4d10-afbb-f21662d7cccb.png">
 </p>
 
 ### Supports
